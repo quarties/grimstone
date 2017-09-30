@@ -14,6 +14,12 @@ Simple front-end app for auction created for New Age: From Louisiana with Love l
 - *limitAutoBid* - limit when auto bid stops bidding,
 3. Open `index.html` file.
 
+### Functionality
+
++ random auto bid - bids random value in random intervals until the limit is reached
++ manual bids
++ reverting auto and manual bids
+
 ### Instruction
 
 Keyboard functions:\

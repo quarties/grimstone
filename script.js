@@ -26,17 +26,17 @@ function getRandomInt(min, max) {
 $(document).ready(function () {
 
     var bidElement = $('#bid'),
-        startBid = 100,
+        startBid = 1000,
         autoBidValue = 0,
-        minBid = 100, // minimum value of auto bid
-        maxBid = 500, // maximum value of auto bid
+        minBid = 1000, // minimum value of auto bid
+        maxBid = 50000, // maximum value of auto bid
         playerBidValue = 0,
         currentBid,
         prevBid,
         bidTime,
         minTime = 5000, // minimum time for auto bid in miliseconds
         maxTime = 15000, // maximum time for auto bid in miliseconds
-        maxAutoBid = 2000, // maximum value for auto bid
+        maxAutoBid = 1000000, // maximum value for auto bid
         autoBidSound = 'autoBid.mp3',
         playerBidSound = 'playerBid.mp3',
         enableSounds = 1,

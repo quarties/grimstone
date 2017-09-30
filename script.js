@@ -36,26 +36,43 @@ $(document).ready(function () {
         maxTime = 15000, // maximum time for auto bid in miliseconds
         maxAutoBid = 2000, // maximum value for auto bid
         autoBidSound = 'autoBid.mp3',
-        playerBidSound = 'playerBid.mp3';
+        playerBidSound = 'playerBid.mp3',
+        enableSounds = 1,
+        enableAutoBid = 0;
 
     bidElement.html(startBid);
 
     function autoBid () {
-        currentBid = bidElement.html();
-        currentBid = parseInt(currentBid);
+        currentBid = parseInt(bidElement.html());
         if (currentBid < maxAutoBid) {
             bidTime = getRandomInt(minTime, maxTime);
             setTimeout(function () {
                 bid = getRandomInt(minBid, maxBid);
                 bid += currentBid;
                 bidElement.html(bid);
-                $.playSound(autoBidSound);
+                if (enableSounds === 1) $.playSound(autoBidSound);
                 autoBid();
             }, bidTime);
         }
     }
 
-    autoBid();
+    function playerBid(keyCode) {
+        currentBid = parseInt(bidElement.html());
+        bid = (keyCode - 48)*100;
+        bid += currentBid;
+        bidElement.html(bid);
+        if (enableSounds === 1) $.playSound(playerBidSound);
+    }
+
+    $(document).keyup(function (e) {
+        if (e.keyCode > 48 && e.keyCode < 58) {
+            playerBid(e.keyCode);
+        } else if (e.keyCode === 48) {
+            playerBid(58);
+        }
+    });
+
+    if(enableAutoBid === 1) autoBid();
 
 
 })

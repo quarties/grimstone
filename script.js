@@ -28,19 +28,23 @@ $(document).ready(function () {
     var bidElement = $('#bid'),
         startBid = 100,
         bid,
+        minBid = 100,
+        maxBid = 500,
         currentBid,
         bidTime,
-        maxBid = 2000;
+        minTime = 5000,
+        maxTime = 15000,
+        maxTotalBid = 2000;
 
     bidElement.html(startBid);
 
     function autoBid () {
         currentBid = bidElement.html();
         currentBid = parseInt(currentBid);
-        if (currentBid < maxBid) {
-            bidTime = getRandomInt(5000, 15000);
+        if (currentBid < maxTotalBid) {
+            bidTime = getRandomInt(minTime, maxTime);
             setTimeout(function () {
-                bid = getRandomInt(100, 500);
+                bid = getRandomInt(minBid, maxBid);
                 bid += currentBid;
                 bidElement.html(bid);
                 autoBid();

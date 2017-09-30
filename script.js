@@ -28,13 +28,13 @@ $(document).ready(function () {
     var bidElement = $('#bid'),
         startBid = 100,
         bid,
-        minBid = 100,
-        maxBid = 500,
+        minBid = 100, // minimum value of auto bid
+        maxBid = 500, // maximum value of auto bid
         currentBid,
         bidTime,
-        minTime = 5000,
-        maxTime = 15000,
-        maxTotalBid = 2000,
+        minTime = 5000, // minimum time for auto bid in miliseconds
+        maxTime = 15000, // maximum time for auto bid in miliseconds
+        maxAutoBid = 2000, // maximum value for auto bid
         autoBidSound = 'autoBid.mp3',
         playerBidSound = 'playerBid.mp3';
 
@@ -43,7 +43,7 @@ $(document).ready(function () {
     function autoBid () {
         currentBid = bidElement.html();
         currentBid = parseInt(currentBid);
-        if (currentBid < maxTotalBid) {
+        if (currentBid < maxAutoBid) {
             bidTime = getRandomInt(minTime, maxTime);
             setTimeout(function () {
                 bid = getRandomInt(minBid, maxBid);

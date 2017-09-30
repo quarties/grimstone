@@ -16,7 +16,7 @@ Simple front-end app for auction created for New Age: From Louisiana with Love l
 
 ### Functionality
 
-+ random auto bid - bids random value in random intervals until the limit is reached
++ auto bid - bids random value in random intervals until the limit is reached
 + manual bids
 + reverting auto and manual bids
 

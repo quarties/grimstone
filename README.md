@@ -17,7 +17,6 @@ Simple front-end app for auction created for New Age: From Louisiana with Love l
 ### Instruction
 
 Keyboard functions:\
-\
 `1` - bid 100\
 `2` - bid 1 000\
 `3` - bid 10 000\

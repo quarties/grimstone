@@ -43,17 +43,17 @@ $(document).ready(function () {
     bidElement.html(startBid);
 
     function autoBid () {
-        currentBid = parseInt(bidElement.html());
-        if (currentBid < maxAutoBid) {
-            bidTime = getRandomInt(minTime, maxTime);
-            setTimeout(function () {
+        bidTime = getRandomInt(minTime, maxTime);
+        setTimeout(function () {
+            currentBid = parseInt(bidElement.html());
+            if (currentBid < maxAutoBid) {
                 bid = getRandomInt(minBid, maxBid);
                 bid += currentBid;
                 bidElement.html(bid);
                 if (enableSounds === 1) $.playSound(autoBidSound);
                 autoBid();
-            }, bidTime);
-        }
+            }
+        }, bidTime);
     }
 
     function playerBid(keyCode) {

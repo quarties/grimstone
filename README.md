@@ -1,4 +1,4 @@
-# Grimstone Cartel Auction
+# Grimstone Cartel Auction App
 
 ### Description
 

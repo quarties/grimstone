@@ -2,7 +2,7 @@
 
 ### Description
 
-Simple front-end auction app created for New Age: From Louisiana with Love larp.
+Simple front-end auction app created for *New Age: From Louisiana with Love* larp.
 
 ### Installation
 

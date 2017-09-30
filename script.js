@@ -27,11 +27,12 @@ $(document).ready(function () {
 
     var bidElement = $('#bid'),
         startBid = 100,
-        autoBidValue,
-        playerBidValue,
+        autoBidValue = 0,
         minBid = 100, // minimum value of auto bid
         maxBid = 500, // maximum value of auto bid
+        playerBidValue = 0,
         currentBid,
+        prevBid,
         bidTime,
         minTime = 5000, // minimum time for auto bid in miliseconds
         maxTime = 15000, // maximum time for auto bid in miliseconds
@@ -64,9 +65,8 @@ $(document).ready(function () {
     }
 
     function revertBid (bid) {
-        var revertBid;
         currentBid = parseInt(bidElement.html());
-        revertBid = currentBid - bid;
+        prevBid = currentBid - bid;
         bidElement.html(revertBid);
     }
 

@@ -78,7 +78,7 @@ $(document).ready(function () {
 
     function revertBid (bid) {
         prevBid = getCurrentBid() - bid;
-        bidElement.html(prevBid);
+        bidElement.html(numberWithSpaces(prevBid));
     }
 
     $(document).keyup(function (e) {

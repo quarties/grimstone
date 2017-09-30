@@ -65,7 +65,6 @@ $(document).ready(function () {
     }
 
     $(document).keyup(function (e) {
-        console.log(e.keyCode);
         if (e.keyCode > 48 && e.keyCode < 58) {
             playerBid(e.keyCode);
         } else if (e.keyCode === 48) {

@@ -1,10 +1,10 @@
 # Grimstone Cartel Auction
 
-####Description
+###Description
 
 Simple front-end app for auction created for New Age: From Louisiana with Love larp.
 
-####Installation
+###Installation
 
 1. Download repository.
 2. Set up variables in `scritp.js` file:
@@ -14,7 +14,7 @@ Simple front-end app for auction created for New Age: From Louisiana with Love l
 - limitAutoBid - limit when auto bid stops bidding,
 3. Open `index.html` file.
 
-####Instruction
+###Instruction
 
 Keyboard functions:\
 \
@@ -31,7 +31,7 @@ Keyboard functions:\
 `a` - revert last auto bid\
 `x` - revert last manual bid
 
-####Credits
+###Credits
 
 *Quarties* - coder\
 *Zeman* *Dracan* - idea\

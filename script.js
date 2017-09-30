@@ -67,7 +67,7 @@ $(document).ready(function () {
     function revertBid (bid) {
         currentBid = parseInt(bidElement.html());
         prevBid = currentBid - bid;
-        bidElement.html(revertBid);
+        bidElement.html(prevBid);
     }
 
     $(document).keyup(function (e) {

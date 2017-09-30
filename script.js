@@ -27,7 +27,8 @@ $(document).ready(function () {
 
     var bidElement = $('#bid'),
         startBid = 100,
-        bid,
+        autoBidValue,
+        playerBidValue,
         minBid = 100, // minimum value of auto bid
         maxBid = 500, // maximum value of auto bid
         currentBid,
@@ -47,9 +48,8 @@ $(document).ready(function () {
         setTimeout(function () {
             currentBid = parseInt(bidElement.html());
             if (currentBid < maxAutoBid) {
-                bid = getRandomInt(minBid, maxBid);
-                bid += currentBid;
-                bidElement.html(bid);
+                autoBidValue = getRandomInt(minBid, maxBid);
+                bidElement.html(currentBid + autoBidValue);
                 if (enableSounds === 1) $.playSound(autoBidSound);
                 autoBid();
             }
@@ -58,10 +58,16 @@ $(document).ready(function () {
 
     function playerBid(keyCode) {
         currentBid = parseInt(bidElement.html());
-        bid = Math.pow(10,(keyCode - 47));
-        bid += currentBid;
-        bidElement.html(bid);
+        playerBidValue = Math.pow(10,(keyCode - 47));
+        bidElement.html(currentBid + playerBidValue);
         if (enableSounds === 1) $.playSound(playerBidSound);
+    }
+
+    function revertBid (bid) {
+        var revertBid;
+        currentBid = parseInt(bidElement.html());
+        revertBid = currentBid - bid;
+        bidElement.html(revertBid);
     }
 
     $(document).keyup(function (e) {
@@ -69,10 +75,13 @@ $(document).ready(function () {
             playerBid(e.keyCode);
         } else if (e.keyCode === 48) {
             playerBid(58);
+        } else if (e.keyCode === 88) {
+            revertBid(playerBidValue);
+        } else if (e.keyCode === 65) {
+            revertBid(autoBidValue);
         }
     });
 
     if(enableAutoBid === 1) autoBid();
 
-
-})
+});

@@ -58,13 +58,14 @@ $(document).ready(function () {
 
     function playerBid(keyCode) {
         currentBid = parseInt(bidElement.html());
-        bid = (keyCode - 48)*100;
+        bid = Math.pow(10,(keyCode - 47));
         bid += currentBid;
         bidElement.html(bid);
         if (enableSounds === 1) $.playSound(playerBidSound);
     }
 
     $(document).keyup(function (e) {
+        console.log(e.keyCode);
         if (e.keyCode > 48 && e.keyCode < 58) {
             playerBid(e.keyCode);
         } else if (e.keyCode === 48) {

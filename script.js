@@ -38,7 +38,7 @@ $(document).ready(function () {
         autoBidSound = 'autoBid.mp3',
         playerBidSound = 'playerBid.mp3',
         enableSounds = 1,
-        enableAutoBid = 0;
+        enableAutoBid = 1;
 
     bidElement.html(startBid);
 

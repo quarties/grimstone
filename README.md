@@ -8,10 +8,10 @@ Simple front-end app for auction created for New Age: From Louisiana with Love l
 
 1. Download repository.
 2. Set up variables in `scritp.js` file:
-- startBid - starting price,
-- minAutoBid & maxAutoBid - minimum and maximum value of auto bid,
-- minTime & maxTime - minimum and maximum time for auto bid,
-- limitAutoBid - limit when auto bid stops bidding,
+- *startBid* - starting price,
+- *minAutoBid* & *maxAutoBid* - minimum and maximum value of auto bid,
+- *minTime* & *maxTime* - minimum and maximum time for auto bid,
+- *limitAutoBid* - limit when auto bid stops bidding,
 3. Open `index.html` file.
 
 ### Instruction
@@ -33,5 +33,5 @@ Keyboard functions:\
 ### Credits
 
 *Quarties* - coder\
-*Zeman* *Dracan* - idea\
+*Zeman* & *Dracan* - idea\
 *[admsev](https://github.com/admsev/jquery-play-sound)* - jQuery playSound

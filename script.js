@@ -27,16 +27,16 @@ $(document).ready(function () {
 
     var bidElement = $('#bid'),
         startBid = 1000,
-        autoBidValue = 0,
-        minBid = 1000, // minimum value of auto bid
-        maxBid = 50000, // maximum value of auto bid
-        playerBidValue = 0,
+        autoBidValue = 0, // don't change it
+        minAutoBid = 1000, // minimum value of auto bid
+        maxAutoBid = 50000, // maximum value of auto bid
+        playerBidValue = 0, // don't change it
         currentBid,
         prevBid,
         bidTime,
         minTime = 5000, // minimum time for auto bid in miliseconds
         maxTime = 15000, // maximum time for auto bid in miliseconds
-        maxAutoBid = 1000000, // maximum value for auto bid
+        limitAutoBid = 1000000, // limit for auto bid
         autoBidSound = 'autoBid.mp3',
         playerBidSound = 'playerBid.mp3',
         enableSounds = 1,
@@ -61,8 +61,8 @@ $(document).ready(function () {
     function autoBid () {
         bidTime = getRandomInt(minTime, maxTime);
         setTimeout(function () {
-            if (getCurrentBid() < maxAutoBid) {
-                autoBidValue = getRandomInt(minBid, maxBid);
+            if (getCurrentBid() < limitAutoBid) {
+                autoBidValue = getRandomInt(minAutoBid, maxAutoBid);
                 addBid(autoBidValue);
                 if (enableSounds === 1) $.playSound(autoBidSound);
                 autoBid();

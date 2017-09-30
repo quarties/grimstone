@@ -34,7 +34,9 @@ $(document).ready(function () {
         bidTime,
         minTime = 5000,
         maxTime = 15000,
-        maxTotalBid = 2000;
+        maxTotalBid = 2000,
+        autoBidSound = 'autoBid.mp3',
+        playerBidSound = 'playerBid.mp3';
 
     bidElement.html(startBid);
 
@@ -47,6 +49,7 @@ $(document).ready(function () {
                 bid = getRandomInt(minBid, maxBid);
                 bid += currentBid;
                 bidElement.html(bid);
+                $.playSound(autoBidSound);
                 autoBid();
             }, bidTime);
         }

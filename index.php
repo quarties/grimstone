@@ -23,6 +23,7 @@
     <h1>$<span id="bid"></span></h1>
 </div>
 <script src="jquery.js"></script>
+<script src="jquery.playSound.js"></script>
 <script src="script.js"></script>
 </body>
 </html>

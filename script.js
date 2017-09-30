@@ -42,15 +42,28 @@ $(document).ready(function () {
         enableSounds = 1,
         enableAutoBid = 1;
 
-    bidElement.html(startBid);
+    bidElement.html(numberWithSpaces(startBid));
+
+    function numberWithSpaces(x) {
+        return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+    }
+
+    function getCurrentBid() {
+        currentBid = bidElement.html();
+        currentBid = currentBid.replace(/\s/g,'');
+        return parseInt(currentBid);
+    }
+
+    function addBid(bid) {
+        bidElement.html(numberWithSpaces(getCurrentBid() + bid));
+    }
 
     function autoBid () {
         bidTime = getRandomInt(minTime, maxTime);
         setTimeout(function () {
-            currentBid = parseInt(bidElement.html());
-            if (currentBid < maxAutoBid) {
+            if (getCurrentBid() < maxAutoBid) {
                 autoBidValue = getRandomInt(minBid, maxBid);
-                bidElement.html(currentBid + autoBidValue);
+                addBid(autoBidValue);
                 if (enableSounds === 1) $.playSound(autoBidSound);
                 autoBid();
             }
@@ -58,15 +71,13 @@ $(document).ready(function () {
     }
 
     function playerBid(keyCode) {
-        currentBid = parseInt(bidElement.html());
         playerBidValue = Math.pow(10,(keyCode - 47));
-        bidElement.html(currentBid + playerBidValue);
+        addBid(playerBidValue);
         if (enableSounds === 1) $.playSound(playerBidSound);
     }
 
     function revertBid (bid) {
-        currentBid = parseInt(bidElement.html());
-        prevBid = currentBid - bid;
+        prevBid = getCurrentBid() - bid;
         bidElement.html(prevBid);
     }
 
